@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Discord = require("discord.js");
 const client = new Discord.Client();
 client.on('ready', () => {
@@ -443,12 +442,6 @@ client.on('message', message => {//unmute
   message.channel.sendEmbed(Embed11).then(message => {message.delete(20000)})
       }
 });
-	client.on('message', msg => {
-    if (msg.content === 'الوان') {
-      if (msg.channel.id !== "489048856143855636") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/489048854101229569/489057390482685962/colors.png"})
-    }
-  });
 
 
 
