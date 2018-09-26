@@ -15,6 +15,8 @@ client.on("message", message => {
          .setThumbnail(message.author.avatarURL)
          .setDescription(`
 اوامر عامة
+
+T-picserver ⇏ لعرض صورة السيرفر 
 T-id ⇏ الهوية
 T-avatar ⇏ لعرض صورة حسابك 
 T-server ⇏ معلومات السيرفر
@@ -240,6 +242,20 @@ footer: {
                   }
 
 
+});
+ client.on("message", message => {    //serv-av
+        if(!message.channel.guild) return;
+ if(message.author.bot) return;
+    if(message.content === "T-picserver"){
+        const embed = new Discord.RichEmbed()
+
+    .setTitle(`صورة سيرفر : ** ${message.guild.name} **`)
+.setAuthor(message.author.username, message.guild.iconrURL)
+  .setColor('RANDOM')
+  .setImage(message.guild.iconURL)
+
+ message.channel.send({embed});
+    }
 });
 client.on('message', function(message) {
     if(message.content.startsWith('T-roll')) {
